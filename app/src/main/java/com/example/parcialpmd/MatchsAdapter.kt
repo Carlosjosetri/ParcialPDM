@@ -5,12 +5,15 @@ import android.service.autofill.FieldClassification
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.parcial_pdm.database.entities.Match
+import com.example.parcialpmd.fragments.login
+import kotlinx.android.synthetic.main.list_element_match.view.*
 
 
-
-class MatchsAdapter(var items:List<Match>): RecyclerView.Adapter<MatchsAdapter.ViewHolder>() {
+class MatchsAdapter(var items:List<Match>): RecyclerView.Adapter<MatchsAdapter.ViewHolder>(){
 
 
 
@@ -37,8 +40,10 @@ class MatchsAdapter(var items:List<Match>): RecyclerView.Adapter<MatchsAdapter.V
 
 
         fun bind(item: Match) = with(itemView) {
+         itemView.textView2.text = item.team1+" vs "+item.team2
 
-
+            itemView.findViewById<Button>(R.id.button2list)?.setOnClickListener(
+                Navigation.createNavigateOnClickListener(R.id.game_action, null))
 
         }
 

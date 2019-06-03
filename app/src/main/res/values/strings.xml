@@ -16,4 +16,10 @@
     <string name="create">Create</string>
     <string name="name_team_2">Name Team 2</string>
     <string name="name_team_1">Name Team 1</string>
+    <string name="text_team_a">Team A</string>
+    <string name="action_3_points">+3 POINTS</string>
+    <string name="action_2_points">+2 POINTS</string>
+    <string name="action_free_throw">FREE THROW</string>
+    <string name="text_team_b">Team B</string>
+    <string name="action_reset">reset</string>
 </resources>

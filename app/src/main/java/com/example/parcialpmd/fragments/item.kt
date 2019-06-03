@@ -36,15 +36,10 @@ private const val ARG_PARAM2 = "param2"
  * create an instance of this fragment.
  *
  */
-class Matchs : Fragment() {
+class item : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
-    private lateinit var viewAdapter: MatchsAdapter
-
-    lateinit var viewModel:BasketViewModel
-
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,25 +50,13 @@ class Matchs : Fragment() {
 
     }
 
-    fun bind(view: View){
-        viewModel= ViewModelProviders.of(this).get(BasketViewModel::class.java)
-        viewAdapter= MatchsAdapter(ArrayList())
-
-       view.rv_matchs.adapter= this.viewAdapter
-        view.rv_matchs.layoutManager = LinearLayoutManager(this.context)
-
-        viewModel.getAllMatchs().observe(this, Observer {
-            viewAdapter.updateList(it)
-        })
-
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_matchs, container, false)
-        bind(view)
+        val view = inflater.inflate(R.layout.list_element_match, container, false)
+
 
         // Inflate the layout for this fragment
         return view
@@ -82,24 +65,9 @@ class Matchs : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
 
-        view.findViewById<TextView>(R.id.butnew)?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.new_action, null))
 
 
     }
-    // TODO: Rename method, update argument and hook method into UI event
-
-    /**
-     * This interface must be implemented by activities that contain this
-     * fragment to allow an interaction in this fragment to be communicated
-     * to the activity and potentially other fragments contained in that
-     * activity.
-     *
-     *
-     * See the Android Training lesson [Communicating with Other Fragments]
-     * (http://developer.android.com/training/basics/fragments/communicating.html)
-     * for more information.
-     */
 
 
 
