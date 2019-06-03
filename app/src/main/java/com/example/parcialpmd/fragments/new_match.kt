@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.TextView
 import androidx.navigation.Navigation
 import com.example.parcial_pdm.database.entities.Match
@@ -57,8 +58,8 @@ class new_match : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         val view =inflater.inflate(R.layout.fragment_new_match, container, false)
-        view.findViewById<TextView>(R.id.btncreateMatch)?.setOnClickListener(
-            Navigation.createNavigateOnClickListener(R.id.return_action, null))
+        view.findViewById<Button>(R.id.btncreateMatch)?.setOnClickListener(
+            Navigation.createNavigateOnClickListener(R.id.match_action, null))
         initSearchButton(view)
         // Inflate the layout for this fragment
         return view

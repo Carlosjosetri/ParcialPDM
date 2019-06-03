@@ -14,6 +14,7 @@
     <fragment android:id="@+id/matchs_dest" android:name="com.example.parcialpmd.fragments.Matchs" android:label="fragment_matchs"
               tools:layout="@layout/fragment_matchs">
         <action android:id="@+id/new_action" app:destination="@id/new_match"/>
+        <action android:id="@+id/game_action" app:destination="@id/game"/>
     </fragment>
     <fragment android:id="@+id/new_match" android:name="com.example.parcialpmd.fragments.new_match"
               android:label="fragment_new_match" tools:layout="@layout/fragment_new_match">
