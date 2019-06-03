@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            xmlns:tools="http://schemas.android.com/tools" android:id="@+id/navigation_main"
+            app:startDestination="@id/login_dest">
+
+    <fragment android:id="@+id/login_dest" android:name="com.example.parcialpmd.fragments.login" android:label="fragment_login"
+              tools:layout="@layout/fragment_login">
+        <action android:id="@+id/register_action" app:destination="@id/register_dest"/>
+        <action android:id="@+id/match_action" app:destination="@id/matchs"/>
+    </fragment>
+    <fragment android:id="@+id/register_dest" android:name="com.example.parcialpmd.fragments.register"
+              android:label="fragment_register" tools:layout="@layout/fragment_register"/>
+    <fragment android:id="@+id/matchs" android:name="com.example.parcialpmd.fragments.Matchs" android:label="fragment_matchs"
+              tools:layout="@layout/fragment_matchs">
+        <action android:id="@+id/new_action" app:destination="@id/new_match"/>
+    </fragment>
+    <fragment android:id="@+id/new_match" android:name="com.example.parcialpmd.fragments.new_match"
+              android:label="fragment_new_match" tools:layout="@layout/fragment_new_match"/>
+</navigation>
